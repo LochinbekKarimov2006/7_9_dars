@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Add this import
+import axios from 'axios';
 import App from '../components/Corusel';
 
 function Desktob() {
