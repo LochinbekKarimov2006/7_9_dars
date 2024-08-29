@@ -3,7 +3,6 @@ import axios from 'axios';
 import App from '../components/Corusel';
 
 function Desktob() {
-    console.log("salom");
     const [items, setItems] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [malumod, setMalumod] = useState([]);
@@ -17,7 +16,6 @@ function Desktob() {
         .then((response) => {
             setMalumod(response.data.docs);
             setItems(response.data.docs);
-            console.log(response.data.docs);
         })
         .catch((error) => {
             console.error('Error fetching data:', error);

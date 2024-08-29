@@ -12,8 +12,8 @@ function Navbar() {
                 <div className='flex flex-col items-center mt-[30px] gap-[30px]'>
                 <NavLink to="/"><img className='w-[20px] text-white' src="     https://cdn-icons-png.flaticon.com/512/16787/16787237.png " alt="" /></NavLink>
                 <NavLink to="/1"><img className='w-[20px]' src="     https://cdn-icons-png.flaticon.com/512/1179/1179069.png  " alt="" /></NavLink>
-                <NavLink to="/2"><img className='w-[20px]' src="     https://cdn-icons-png.flaticon.com/512/1023/1023521.png " alt="" /></NavLink>
-                <NavLink to="/3"><img className='w-[20px]' src="      https://cdn-icons-png.flaticon.com/512/892/892340.png " alt="" /></NavLink>
+                <NavLink to="/3"><img className='w-[20px]' src="     https://cdn-icons-png.flaticon.com/512/1023/1023521.png " alt="" /></NavLink>
+                <NavLink to="/2"><img className='w-[20px]' src="      https://cdn-icons-png.flaticon.com/512/892/892340.png " alt="" /></NavLink>
                 </div>
             </div>
             <div className='p-[18px]'>

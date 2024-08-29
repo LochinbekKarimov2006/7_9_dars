@@ -21,9 +21,9 @@ const Carousel = ({ items }) => {
   ];
 
   return (
-    <div className="flex justify-between w-[100%] space-x-4 overflow-hidden ">
+    <div className="flex justify-between div-4 w-[100%] space-x-4 overflow-hidden ">
       {visibleItems.map((item, index) => (
-        <div key={index} className="min-w-[430px] h-[230px] bg-cover bg-center" style={{ backgroundImage: `url(${item.image})` }}>
+        <div key={index} id={`div-${index}`} className="min-w-[430px] h-[100%] bg-cover bg-center" style={{ backgroundImage: `url(${item.image})` }}>
           <div className="p-4 bg-black bg-opacity-50 text-white">
             <h3>{item.title}</h3>
             <p>{item.year} - {item.type} - {item.rating}</p>
