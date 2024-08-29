@@ -1,0 +1,405 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "Inception",
+        "director": "Christopher Nolan",
+        "type": "Film",
+        "release_year": 2010,
+        "poster": "https://example.com/posters/inception.jpg"
+      },
+      {
+        "id": 2,
+        "title": "The Witcher",
+        "director": "Lauren Schmidt Hissrich",
+        "type": "Serial",
+        "release_year": 2019,
+        "poster": "https://example.com/posters/the_witcher.jpg"
+      },
+      {
+        "id": 3,
+        "title": "The Matrix",
+        "director": "Lana Wachowski, Lilly Wachowski",
+        "type": "Film",
+        "release_year": 1999,
+        "poster": "https://example.com/posters/the_matrix.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Breaking Bad",
+        "director": "Vince Gilligan",
+        "type": "Serial",
+        "release_year": 2008,
+        "poster": "https://example.com/posters/breaking_bad.jpg"
+      },
+      {
+        "id": 5,
+        "title": "The Dark Knight",
+        "director": "Christopher Nolan",
+        "type": "Film",
+        "release_year": 2008,
+        "poster": "https://example.com/posters/the_dark_knight.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Stranger Things",
+        "director": "The Duffer Brothers",
+        "type": "Serial",
+        "release_year": 2016,
+        "poster": "https://example.com/posters/stranger_things.jpg"
+      },
+      {
+        "id": 7,
+        "title": "The Godfather",
+        "director": "Francis Ford Coppola",
+        "type": "Film",
+        "release_year": 1972,
+        "poster": "https://example.com/posters/the_godfather.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Game of Thrones",
+        "director": "David Benioff, D.B. Weiss",
+        "type": "Serial",
+        "release_year": 2011,
+        "poster": "https://example.com/posters/game_of_thrones.jpg"
+      },
+      {
+        "id": 9,
+        "title": "Pulp Fiction",
+        "director": "Quentin Tarantino",
+        "type": "Film",
+        "release_year": 1994,
+        "poster": "https://example.com/posters/pulp_fiction.jpg"
+      },
+      {
+        "id": 10,
+        "title": "Friends",
+        "director": "David Crane, Marta Kauffman",
+        "type": "Serial",
+        "release_year": 1994,
+        "poster": "https://example.com/posters/friends.jpg"
+      },
+      {
+        "id": 11,
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "director": "Peter Jackson",
+        "type": "Film",
+        "release_year": 2001,
+        "poster": "https://example.com/posters/lotr_fellowship.jpg"
+      },
+      {
+        "id": 12,
+        "title": "Sherlock",
+        "director": "Mark Gatiss, Steven Moffat",
+        "type": "Serial",
+        "release_year": 2010,
+        "poster": "https://example.com/posters/sherlock.jpg"
+      },
+      {
+        "id": 13,
+        "title": "The Shawshank Redemption",
+        "director": "Frank Darabont",
+        "type": "Film",
+        "release_year": 1994,
+        "poster": "https://example.com/posters/shawshank_redemption.jpg"
+      },
+      {
+        "id": 14,
+        "title": "The Office",
+        "director": "Greg Daniels",
+        "type": "Serial",
+        "release_year": 2005,
+        "poster": "https://example.com/posters/the_office.jpg"
+      },
+      {
+        "id": 15,
+        "title": "Interstellar",
+        "director": "Christopher Nolan",
+        "type": "Film",
+        "release_year": 2014,
+        "poster": "https://example.com/posters/interstellar.jpg"
+      },
+      {
+        "id": 16,
+        "title": "The Crown",
+        "director": "Peter Morgan",
+        "type": "Serial",
+        "release_year": 2016,
+        "poster": "https://example.com/posters/the_crown.jpg"
+      },
+      {
+        "id": 17,
+        "title": "Forrest Gump",
+        "director": "Robert Zemeckis",
+        "type": "Film",
+        "release_year": 1994,
+        "poster": "https://example.com/posters/forrest_gump.jpg"
+      },
+      {
+        "id": 18,
+        "title": "Money Heist",
+        "director": "Álex Pina",
+        "type": "Serial",
+        "release_year": 2017,
+        "poster": "https://example.com/posters/money_heist.jpg"
+      },
+      {
+        "id": 19,
+        "title": "The Avengers",
+        "director": "Joss Whedon",
+        "type": "Film",
+        "release_year": 2012,
+        "poster": "https://example.com/posters/the_avengers.jpg"
+      },
+      {
+        "id": 20,
+        "title": "The Mandalorian",
+        "director": "Jon Favreau",
+        "type": "Serial",
+        "release_year": 2019,
+        "poster": "https://example.com/posters/the_mandalorian.jpg"
+      },
+      {
+        "id": 21,
+        "title": "Gladiator",
+        "director": "Ridley Scott",
+        "type": "Film",
+        "release_year": 2000,
+        "poster": "https://example.com/posters/gladiator.jpg"
+      },
+      {
+        "id": 22,
+        "title": "Dark",
+        "director": "Baran bo Odar, Jantje Friese",
+        "type": "Serial",
+        "release_year": 2017,
+        "poster": "https://example.com/posters/dark.jpg"
+      },
+      {
+        "id": 23,
+        "title": "Titanic",
+        "director": "James Cameron",
+        "type": "Film",
+        "release_year": 1997,
+        "poster": "https://example.com/posters/titanic.jpg"
+      },
+      {
+        "id": 24,
+        "title": "House of Cards",
+        "director": "Beau Willimon",
+        "type": "Serial",
+        "release_year": 2013,
+        "poster": "https://example.com/posters/house_of_cards.jpg"
+      },
+      {
+        "id": 25,
+        "title": "Avatar",
+        "director": "James Cameron",
+        "type": "Film",
+        "release_year": 2009,
+        "poster": "https://example.com/posters/avatar.jpg"
+      },
+      {
+        "id": 26,
+        "title": "The Sopranos",
+        "director": "David Chase",
+        "type": "Serial",
+        "release_year": 1999,
+        "poster": "https://example.com/posters/the_sopranos.jpg"
+      },
+      {
+        "id": 27,
+        "title": "The Lion King",
+        "director": "Roger Allers, Rob Minkoff",
+        "type": "Film",
+        "release_year": 1994,
+        "poster": "https://example.com/posters/the_lion_king.jpg"
+      },
+      {
+        "id": 28,
+        "title": "The Boys",
+        "director": "Eric Kripke",
+        "type": "Serial",
+        "release_year": 2019,
+        "poster": "https://example.com/posters/the_boys.jpg"
+      },
+      {
+        "id": 29,
+        "title": "The Departed",
+        "director": "Martin Scorsese",
+        "type": "Film",
+        "release_year": 2006,
+        "poster": "https://example.com/posters/the_departed.jpg"
+      },
+      {
+        "id": 30,
+        "title": "Peaky Blinders",
+        "director": "Steven Knight",
+        "type": "Serial",
+        "release_year": 2013,
+        "poster": "https://example.com/posters/peaky_blinders.jpg"
+      },
+      {
+        "id": 31,
+        "title": "Jurassic Park",
+        "director": "Steven Spielberg",
+        "type": "Film",
+        "release_year": 1993,
+        "poster": "https://example.com/posters/jurassic_park.jpg"
+      },
+      {
+        "id": 32,
+        "title": "Chernobyl",
+        "director": "Johan Renck",
+        "type": "Serial",
+        "release_year": 2019,
+        "poster": "https://example.com/posters/chernobyl.jpg"
+      },
+      {
+        "id": 33,
+        "title": "Goodfellas",
+        "director": "Martin Scorsese",
+        "type": "Film",
+        "release_year": 1990,
+        "poster": "https://example.com/posters/goodfellas.jpg"
+      },
+      {
+        "id": 34,
+        "title": "The Queen's Gambit",
+        "director": "Scott Frank, Allan Scott",
+        "type": "Serial",
+        "release_year": 2020,
+        "poster": "https://example.com/posters/the_queens_gambit.jpg"
+      },
+      {
+        "id": 35,
+        "title": "The Terminator",
+        "director": "James Cameron",
+        "type": "Film",
+        "release_year": 1984,
+        "poster": "https://example.com/posters/the_terminator.jpg"
+      },
+      {
+        "id": 36,
+        "title": "The Umbrella Academy",
+        "director": "Steve Blackman",
+        "type": "Serial",
+        "release_year": 2019,
+        "poster": "https://example.com/posters/the_umbrella_academy.jpg"
+      },
+      {
+        "id": 37,
+        "title": "The Silence of the Lambs",
+        "director": "Jonathan Demme",
+        "type": "Film",
+        "release_year": 1991,
+        "poster": "https://example.com/posters/the_silence_of_the_lambs.jpg"
+      },
+      {
+        "id": 38,
+        "title": "Lost",
+        "director": "J.J. Abrams, Damon Lindelof",
+        "type": "Serial",
+        "release_year": 2004,
+        "poster": "https://example.com/posters/lost.jpg"
+      },
+      {
+        "id": 39,
+        "title": "Die Hard",
+        "director": "John McTiernan",
+        "type": "Film",
+        "release_year": 1988,
+        "poster": "https://example.com/posters/die_hard.jpg"
+      },
+      {
+        "id": 40,
+        "title": "The Handmaid's Tale",
+        "director": "Bruce Miller",
+        "type": "Serial",
+        "release_year": 2017,
+        "poster": "https://example.com/posters/the_handmaids_tale.jpg"
+      },
+      {
+        "id": 41,
+        "title": "The Sixth Sense",
+        "director": "M. Night Shyamalan",
+        "type": "Film",
+        "release_year": 1999,
+        "poster": "https://example.com/posters/the_sixth_sense.jpg"
+      },
+      {
+        "id": 42,
+        "title": "Dexter",
+        "director": "James Manos Jr.",
+        "type": "Serial",
+        "release_year": 2006,
+        "poster": "https://example.com/posters/dexter.jpg"
+      },
+      {
+        "id": 43,
+        "title": "Back to the Future",
+        "director": "Robert Zemeckis",
+        "type": "Film",
+        "release_year": 1985,
+        "poster": "https://example.com/posters/back_to_the_future.jpg"
+      },
+      {
+        "id": 44,
+        "title": "True Detective",
+        "director": "Nic Pizzolatto",
+        "type": "Serial",
+        "release_year": 2014,
+        "poster": "https://example.com/posters/true_detective.jpg"
+      },
+      {
+        "id": 45,
+        "title": "Braveheart",
+        "director": "Mel Gibson",
+        "type": "Film",
+        "release_year": 1995,
+        "poster": "https://example.com/posters/braveheart.jpg"
+      },
+      {
+        "id": 46,
+        "title": "Narcos",
+        "director": "Chris Brancato, Carlo Bernard, Doug Miro",
+        "type": "Serial",
+        "release_year": 2015,
+        "poster": "https://example.com/posters/narcos.jpg"
+      },
+      {
+        "id": 47,
+        "title": "The Godfather Part II",
+        "director": "Francis Ford Coppola",
+        "type": "Film",
+        "release_year": 1974,
+        "poster": "https://example.com/posters/the_godfather_part_2.jpg"
+      },
+      {
+        "id": 48,
+        "title": "The Walking Dead",
+        "director": "Frank Darabont",
+        "type": "Serial",
+        "release_year": 2010,
+        "poster": "https://example.com/posters/the_walking_dead.jpg"
+      },
+      {
+        "id": 49,
+        "title": "Fight Club",
+        "director": "David Fincher",
+        "type": "Film",
+        "release_year": 1999,
+        "poster": "https://example.com/posters/fight_club.jpg"
+      },
+      {
+        "id": 50,
+        "title": "Ozark",
+        "director": "Bill Dubuque, Mark Williams",
+        "type": "Serial",
+        "release_year": 2017,
+        "poster": "https://example.com/posters/ozark.jpg"
+      }
+    ]
+  }
+  
