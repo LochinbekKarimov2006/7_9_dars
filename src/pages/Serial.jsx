@@ -1,20 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import useDebounce from '../components/Qidiruv'; // Yangi hookni import qiling
+
 function Serial() {
     const [items, setItems] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState('?rating.imdb=8-10&limit=100');
     const [malumod, setMalumod] = useState([]);
+    const [qidiruv, setQidiruv] = useState("");
+
+    const debouncedSearchQuery = useDebounce(qidiruv, 1000); // 3 soniya kechikish bilan debounced qidiruv
+
+    function qidiruvlar(e) {
+        if (e === "") {
+            setSearchQuery("?rating.imdb=8-10&limit=100");
+        } else {
+            setSearchQuery(`/search?query=${e}`);
+        }
+    }
 
     useEffect(() => {
-        axios.get("https://api.kinopoisk.dev/v1.4/movie?rating.imdb=8-10&limit=30", {
+        axios.get(`https://api.kinopoisk.dev/v1.4/movie${searchQuery}`, {
             headers: {
-                "X-API-KEY": "207DYM1-T4FMD0P-M675MRK-JCHK7QX",
+                "X-API-KEY": "VRDWYGT-S5W4NTK-HFGZ3PE-W6EZB8K",
             },
         })
         .then((response) => {
           const datas =response.data.docs.filter((e)=>{
-            return e.type!="movie"
-          })
+            return e.type !== "movie";
+          });
           setMalumod(datas);
           setItems(datas);
 
@@ -22,7 +35,11 @@ function Serial() {
         .catch((error) => {
             console.error('Error fetching data:', error);
         });
-    }, []);
+    }, [searchQuery]);
+
+    useEffect(() => {
+        qidiruvlar(debouncedSearchQuery);
+    }, [debouncedSearchQuery]);
 
     const getFilmIcon = (type) => {
         if (type === "tv-series") {
@@ -32,19 +49,6 @@ function Serial() {
         }
     };
 
-    const handleSearch = () => {
-        const filteredData = malumod.filter((item) => {
-            const alternativeName = item.alternativeName || '';
-            const searchQueryLower = searchQuery.toLowerCase();
-            return alternativeName.toLowerCase().includes(searchQueryLower);
-        });
-        setItems(filteredData);
-    };
-
-    useEffect(() => {
-        handleSearch();
-    }, [searchQuery]);
-
     return (
         <div className='pt-[40px] bg-[#10141e] w-[100%] pr-[20px] h-[100vh]'>
             <div className='flex w-[100%] gap-6 items-center border-[#ffffff3c] pb-[20px] border-b-[1px]'>
@@ -52,14 +56,14 @@ function Serial() {
                     <img className='w-[32px]' src="https://cdn-icons-png.flaticon.com/512/17148/17148531.png" alt="Search Icon" />
                 </label>
                 <input 
-                    value={searchQuery}  
-                    onChange={(e) => setSearchQuery(e.target.value)} 
+                    value={qidiruv}  
+                    onChange={(e) => setQidiruv(e.target.value)}
                     className='w-[100%] text-[25px] bg-[#0000] focus:border-none focus:outline-none text-white' 
                     type="text" 
                     placeholder='Search for Serial or TV series'
                 />
             </div>
-            {searchQuery && (
+            {qidiruv && (
                 <div className='div-1'>
                     <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>TV Series</h2>
                     <div className='flex flex-wrap justify-between items-start gap-y-[20px]'>
@@ -83,9 +87,8 @@ function Serial() {
                     </div>
                 </div>
             )}
-            {!searchQuery && (
+            {!qidiruv && (
                 <div className='div-1'>
-                   
                     <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>TV Series</h2>
                     <div className='flex flex-wrap justify-between gap-y-[20px]'>
                         {items.map((e) => (
