@@ -65,7 +65,7 @@ function Serial() {
             </div>
             {qidiruv && (
                 <div className='div-1'>
-                    <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>TV Series</h2>
+                    <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>Movie</h2>
                     <div className='flex flex-wrap justify-between items-start gap-y-[20px]'>
                         {items.map((e) => (
                             <div key={e.id} className='div-2 text-[#f7f7f7c2] bg-[#10141e] drop-shadow-xl border-[#ffffff0e] border-solid border-[1px] rounded-[5px]'>
@@ -89,7 +89,7 @@ function Serial() {
             )}
             {!qidiruv && (
                 <div className='div-1'>
-                    <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>TV Series</h2>
+                    <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>Movie</h2>
                     <div className='flex flex-wrap justify-between gap-y-[20px]'>
                         {items.map((e) => (
                             <div key={e.id} className='div-2 text-[#f7f7f7c2] bg-[#10141e] drop-shadow-xl border-[#ffffff0e] border-solid border-[1px] rounded-[5px]'>
