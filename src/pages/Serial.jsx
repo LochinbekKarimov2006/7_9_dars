@@ -10,7 +10,7 @@ function Movies() {
     const [items, setItems] = useState([]);
     const [searchQuery, setSearchQuery] = useState("?rating.imdb=8-10&limit=100");
     const [malumod, setMalumod] = useState([]);
-    const { state, setState } = useContext(MyContext);
+    const { state, setState ,state1, setState1 } = useContext(MyContext);
     const [qidiruv, setQidiruv] = useState("");
     const debouncedSearchQuery = useDebounce(qidiruv, 1000);
 
@@ -25,7 +25,7 @@ function Movies() {
     useEffect(() => {
         axios.get(`https://api.kinopoisk.dev/v1.4/movie${searchQuery}`, {
             headers: {
-                "X-API-KEY": "NVPH85S-BGYMFX9-NNZAKZT-JE7JCVR",
+                "X-API-KEY": state1,
             },
         })
         .then((response) => {

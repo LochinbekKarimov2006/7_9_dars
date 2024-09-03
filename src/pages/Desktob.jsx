@@ -11,7 +11,7 @@ function Desktob() {
     const [items, setItems] = useState([]);
     const [searchQuery, setSearchQuery] = useState("?rating.imdb=8-10&limit=100");
     const [malumod, setMalumod] = useState([]);
-    const { state, setState } = useContext(MyContext);
+    const { state, setState , state1, setState1 } = useContext(MyContext);
     const [qidiruv, setQidiruv] = useState("");
     const debouncedSearchQuery = useDebounce(qidiruv, 1000);
 
@@ -26,7 +26,7 @@ function Desktob() {
     useEffect(() => {
         axios.get(`https://api.kinopoisk.dev/v1.4/movie${searchQuery}`, {
             headers: {
-                "X-API-KEY": "NVPH85S-BGYMFX9-NNZAKZT-JE7JCVR",
+                "X-API-KEY": state1,
             },
         })
         .then((response) => {
@@ -52,7 +52,6 @@ function Desktob() {
             ? "https://cdn-icons-png.flaticon.com/512/1023/1023521.png" 
             : "https://cdn-icons-png.flaticon.com/512/1179/1179069.png";
     };
-
     const handleSearch = () => {
         const filteredData = malumod.filter((item) => {
             const alternativeName = item.alternativeName || '';
@@ -61,13 +60,13 @@ function Desktob() {
         });
         setItems(filteredData);
     };
-
     useEffect(() => {
         handleSearch();
     }, [searchQuery]);
 
     return (
-        <div className='pt-[40px] bg-[#10141e] w-[100%] pr-[20px] h-[100vh]'>
+        <>
+       {items&& <div className='pt-[40px] bg-[#10141e] w-[100%] pr-[20px] h-[100vh]'>
             <div className='flex w-[100%] gap-6 items-center border-[#ffffff3c] pb-[20px] border-b-[1px]'>
                 <label htmlFor="">
                     <img className='w-[32px]' src="https://cdn-icons-png.flaticon.com/512/17148/17148531.png" alt="Search Icon" />
@@ -147,7 +146,8 @@ function Desktob() {
                 </div>
             )}
             <ToastContainer className="z-50" />
-        </div>
+        </div>}
+        </>
     );
 }
 
