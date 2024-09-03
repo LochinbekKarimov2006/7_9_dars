@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { auth } from '../firebase/Fire'; // Import auth object
+import { auth } from '../firebase/Fire'; 
 
 function Sigin() {
   const [name, setName] = useState('');
@@ -13,7 +13,6 @@ function Sigin() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Update user profile
       await updateProfile(user, { displayName: name });
 
       console.log('Ro\'yxatdan o\'tgan foydalanuvchi:', user);

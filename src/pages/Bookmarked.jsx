@@ -3,7 +3,7 @@ import { MyContext } from '../context/GlobalContext';
 import { ToastContainer, toast } from 'react-toastify';
 function Bookmerk() {
     const { state, setState } = useContext(MyContext);
-    const [qidiruv, setQidiruv] = useState(""); // Qidiruv holati
+    const [qidiruv, setQidiruv] = useState("");
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -17,7 +17,6 @@ function Bookmerk() {
         setData(qidiruvlar);
     };
 
-    // Qidiruv funksiyasini chaqirish uchun useEffect qo'shamiz
     useEffect(() => {
         qidiruvFunksiyasi();
     }, [qidiruv]);

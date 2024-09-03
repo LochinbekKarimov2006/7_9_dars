@@ -22,7 +22,6 @@ function Login() {
       try {
           await signInWithEmailAndPassword(auth, email, password);
           console.log('Kirish muvaffaqiyatli');
-          // Foydalanuvchini boshqa sahifaga yuborish mumkin
       } catch (error) {
           console.error('Kirishda xatolik:', error.message);
       }

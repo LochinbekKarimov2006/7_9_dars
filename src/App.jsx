@@ -18,7 +18,7 @@ function App() {
       setUser(currentUser);
     });
 
-    return () => unsubscribe(); // Cleanup subscription on unmount
+    return () => unsubscribe(); 
   }, []);
 
   const router = createBrowserRouter([
