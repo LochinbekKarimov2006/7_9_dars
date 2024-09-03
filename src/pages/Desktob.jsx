@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import App from '../components/Corusel';
-import { MyContext } from '../context/GlobalContext';
 import useDebounce from '../components/Qidiruv';
+import { MyContext } from '../context/GlobalContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Desktob() {
     const [items, setItems] = useState([]);
@@ -23,7 +26,7 @@ function Desktob() {
     useEffect(() => {
         axios.get(`https://api.kinopoisk.dev/v1.4/movie${searchQuery}`, {
             headers: {
-                "X-API-KEY": "VRDWYGT-S5W4NTK-HFGZ3PE-W6EZB8K",
+                "X-API-KEY": "NVPH85S-BGYMFX9-NNZAKZT-JE7JCVR",
             },
         })
         .then((response) => {
@@ -36,12 +39,14 @@ function Desktob() {
     }, [debouncedSearchQuery]); 
 
     function qoshish(newItem) {
-        setState(prevState => ({
-            ...prevState,
-            [newItem.key]: newItem.value
-        }));
+        const exists = state.some((e) => e.id === newItem.id);
+        if (!exists) {
+            setState([...state, newItem]);
+            toast.success('Item successfully added!');
+        } else {
+            toast.error('Item already exists!');
+        }
     }
-
     const getFilmIcon = (type) => {
         return type === "tv-series" 
             ? "https://cdn-icons-png.flaticon.com/512/1023/1023521.png" 
@@ -141,6 +146,7 @@ function Desktob() {
                     </div>
                 </div>
             )}
+            <ToastContainer className="z-50" />
         </div>
     );
 }

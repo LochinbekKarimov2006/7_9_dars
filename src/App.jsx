@@ -4,7 +4,7 @@ import MainLeyout from './layout/MainLeyout'
 import Desktob from './pages/Desktob'
 import Movies from './pages/Movies'
 import Serial from './pages/Serial'
-import Bookmarked from './pages/Bookmarked'
+import Bookmerk from './pages/Bookmarked'
 function App() {
   let router =createBrowserRouter([
     {
@@ -21,7 +21,7 @@ function App() {
         },
         {
           path:"/2",
-          element:<Bookmarked/>
+          element:<Bookmerk/>
         }, 
         {
           path:"/3",

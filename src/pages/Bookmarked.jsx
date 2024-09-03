@@ -1,56 +1,87 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { MyContext } from '../context/GlobalContext';
+import { ToastContainer, toast } from 'react-toastify';
+function Bookmerk() {
+    const { state, setState } = useContext(MyContext);
+    const [qidiruv, setQidiruv] = useState(""); // Qidiruv holati
+    const [data, setData] = useState([]);
 
-// useDebounce custom hook
-function useDebounce(value, delay) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
+    useEffect(() => {
+        setData(state);
+    }, [state]);
 
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(handler);
+    const qidiruvFunksiyasi = () => {
+        const qidiruvlar = state.filter((e) => 
+            e.alternativeName.toLowerCase().includes(qidiruv.toLowerCase())
+        );
+        setData(qidiruvlar);
     };
-  }, [value, delay]);
 
-  return debouncedValue;
+    // Qidiruv funksiyasini chaqirish uchun useEffect qo'shamiz
+    useEffect(() => {
+        qidiruvFunksiyasi();
+    }, [qidiruv]);
+
+    const getFilmIcon = (type) => {
+        if (type === "tv-series") {
+            return "https://cdn-icons-png.flaticon.com/512/1023/1023521.png";
+        } else {
+            return "https://cdn-icons-png.flaticon.com/512/1179/1179069.png";
+        }
+    };
+
+    const udalit = (id) => {
+        const datas = state.filter(item => item.id !== id);
+        setState(datas);
+        toast.success('You have opened the card!');
+    };
+
+    return (
+        <div className='pt-[40px] bg-[#10141e] w-[100%] pr-[20px] h-[100vh]'>
+            <div className='flex w-[100%] gap-6 justify-center border-[#ffffff3c] pb-[20px] border-b-[1px]'>
+                <label htmlFor="search">
+                    <img className='w-[32px]' src="https://cdn-icons-png.flaticon.com/512/17148/17148531.png" alt="Search Icon" />
+                </label>
+                <input 
+                    id="search"
+                    value={qidiruv}  
+                    onChange={(e) => setQidiruv(e.target.value)}
+                    className='w-[100%] text-[25px] bg-[#0000] focus:border-none focus:outline-none text-white' 
+                    type="text" 
+                    placeholder='Search for Bookmerk or TV series'
+                />
+            </div>
+           
+            {data && (
+                <div className='overflow-auto h-[85vh]'>
+                    <h2 className='text-[32px] text-[#fff] mt-[30px] mb-4'>Bookmarked</h2>
+                    <div className='flex flex-wrap justify-between gap-y-[20px]'>
+                        {data.map((e) => (
+                            <div key={e.id} className='div-2 text-[#f7f7f7c2] bg-[#10141e] drop-shadow-xl border-[#ffffff0e] border-solid border-[1px] rounded-[5px]'>
+                                <img className='w-[200px] h-[250px] rounded-t-[5px] relative' 
+                                     src={e.poster ? e.poster.previewUrl : "https://image.openmoviedb.com/kinopoisk-images/10592371/08982e09-7b03-42f5-8074-019920ca0e7c/orig"} 
+                                     alt="" 
+                                />
+                                <button onClick={() => udalit(e.id)} className='button p-1 hover:bg-[#ffffff61] rounded-[50px]'>
+                                    <img className='w-[30px] h-[30px] bg-white rounded-[50px]' src="https://cdn-icons-png.flaticon.com/512/1828/1828945.png" alt="Delete Icon" />
+                                </button>
+                                <div className='flex flex-col h-[22%] p-[5px] m-1'>
+                                    <div className='flex'>
+                                        <p className='font-[200] text-[13px] flex items-center'>
+                                            {e.year} - {e.type} - 
+                                            <img className='w-5 h-4' src={getFilmIcon(e.type)} alt="" />
+                                        </p>
+                                    </div>
+                                    <h3 className='w-[150px] font-[700] text-[14px]'>{e.alternativeName}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+            <ToastContainer/>
+        </div>
+    );
 }
 
-// SearchPage component
-function SearchPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  useEffect(() => {
-    if (debouncedSearchTerm) {
-      // Qidiruv funksiyasi yoki API chaqiruvi
-      console.log('Qidiruv natijalari:', debouncedSearchTerm);
-    }
-  }, [debouncedSearchTerm]);
-
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-4">Qidiruv sahifasi</h1>
-      <input
-        type="text"
-        placeholder="Biror narsa qidiring..."
-        value={searchTerm}
-        onChange={handleSearch}
-        className="p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      {debouncedSearchTerm && (
-        <p className="mt-4 text-lg">Siz qidirayotgan narsa: {debouncedSearchTerm}</p>
-      )}
-    </div>
-  );
-}
-
-// Exporting the main App component
-export default function App() {
-  return <SearchPage />;
-}
+export default Bookmerk;
